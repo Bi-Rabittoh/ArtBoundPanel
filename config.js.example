@@ -1,0 +1,12 @@
+const CLIENT_ID = "123456789012-3456789abcdefghijklmnopqrstuwxyz.apps.googleusercontent.com",
+	API_KEY = "abcdefghijklmnopqrstuwxyzabcdefghijklmn",
+	SPREADSHEET_ID = "abcdefghijklmnopqrstuwxyzabcdefghijklmnopqrs",
+	SHEET_NAME = "Risposte del modulo 1",
+	DATE_COL = 0,
+	NAME_COL = 1,
+	URL_COL = 3,
+	BS_COL_WIDTH = 4,
+	MAX_WIDTH = MAX_HEIGHT = 1000,
+	WATERMARK_SRC = "res/wm.png",
+	WATERMARK_WIDTH = 325,
+	WATERMARK_HEIGHT = 98;

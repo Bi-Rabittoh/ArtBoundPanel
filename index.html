@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Un modo semplice e veloce per gestire le fanart di ArtBound.">
+		<meta name="author" content="Bi-Rabittoh">
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✏️</text></svg>">
+		<title>ArtBound Panel</title>
+		<link href="ext/css/bootstrap.min.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<main role="main">
+			<section class="jumbotron text-center">
+				<div class="container">
+					<h1 class="jumbotron-heading">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon><line x1="3" y1="22" x2="21" y2="22"></line></svg>
+						ArtBound Panel
+					</h1>
+					<p class="lead" onclick="debugFn()">Perché semplice è meglio.</p>
+					<div id="month_div">
+						<label for="month_input" style="margin-right: 10px;">Scegli il mese: </label><input id="month_input" type="month" value="2022-08">
+						<a href="#" class="btn my-2 btn-go" onclick="handleAuthClick()" id="authorize_button" hidden>Vai</a>
+						<!--<a href="#" class="btn btn-secondary my-2" onclick="debugFn()">debug</a>-->
+					</div>
+					<div id="controls" hidden>
+						<a href="#" class="btn btn-secondary my-2" onclick="selectAllNone(1)" id="selectall_button">✅</a>
+						<a href="#" class="btn btn-secondary my-2" onclick="selectAllNone(0)" id="selectnone_button">❎</a>
+						<a href="#" class="btn btn-secondary my-2" onclick="toggleColor()" id="togglecolor_button">⚪</a>
+						<input type="range" class="form-range" id="opacity_range" min="0" max="1" step="0.01" oninput="updateOpacity()" value="0.4">
+						<label for="opacity_range" class="form-label" id="opacity_label"></label>
+					</div>
+				</div>
+			</section>
+			<div class="album py-5" id="main_container" hidden>
+				<div class="container">
+					<div class="row" id="content"></div>
+					<div class="row">
+						<div class="col-md-12">
+							<a href="#" id="copy_button" onclick="navigator.clipboard.writeText(filename_h1.innerText);" hidden>
+								<h1 id="filename" style="display: inline;"></h1>
+								<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="13" height="13" x="9" y="9" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></g></svg>
+							</a>
+						</div>
+						<div id="canvas" class="col-md-12" hidden>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="container">
+				<p>&copy; Earthbound Café, realizzato da <a href="mailto:andronacomarco@gmail.com">Marco Andronaco</a> (Bi-Rabittoh).</p>
+			</div>
+		</footer>
+		<script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+		<script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+		<script src="ext/js/bootstrap.min.js"></script>
+		<script src="config.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

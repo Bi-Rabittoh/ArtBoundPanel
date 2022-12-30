@@ -1,3 +1,3 @@
-# artbound-panel
+# ArtBoundPanel
 
-https://bi-rabittoh.github.io/artbound-panel
+Create a `config.js` file before launching!
